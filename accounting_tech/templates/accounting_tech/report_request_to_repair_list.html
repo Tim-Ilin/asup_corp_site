@@ -1,0 +1,45 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Список отчетов по заявкам
+{% endblock %}
+{% block content %}
+    {% include 'accounting_tech/top-menu.html' %}
+    {% include 'accounting_tech/top-nav.html' %}
+    <h2 class="home-body__header">Список отчетов по заявкам</h2>
+    <div class="container-fluid">
+        <div class="home-body__filters">
+            <h5>Фильтры</h5>
+            <form method="get" class="home-body__filters--form">
+                {{ filter.form|crispy }}
+                <input type="submit"/>
+            </form>
+        </div>
+        <div class="row table-wrap">
+            <table class="table table-bordered table-equipment">
+                <thead>
+                <tr>
+                    <th scope="col" class="text-center">Заявитель</th>
+                    <th scope="col" class="text-center">Исполнитель</th>
+                    <th scope="col" class="text-center">Время завершения</th>
+                    <th scope="col" class="text-center">Отчет</th>
+                </tr>
+                </thead>
+                {% for repair in reportrequesttorepair_list %}
+                    <tr>
+                        <th scope="row" class="text-center">
+                            {{ repair.request_to_repair }}
+                        </th>
+                        <td class="text-center">{{ repair.fio_executor }}</td>
+                        <td class="text-center">{{ repair.time_field }}</td>
+                        <td class="text-center">{{ repair.report }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.home-body__filters--form').children[1].value = 'Применить фильтр';
+    </script>
+{% endblock %}

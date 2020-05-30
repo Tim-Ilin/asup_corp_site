@@ -1,0 +1,56 @@
+* a {
+    color: #79d7f3;
+}
+
+* a:hover {
+    color: #2fb8f9;
+}
+.left-block {
+    height: 100vh;
+}
+
+.wrap {
+    background-color: #1a3043e6;
+}
+
+.asteriskField {
+    display: none;
+}
+
+.wrap-login {
+    border-radius: 15px;
+    padding: 15px;
+    border: solid 2px #1a3043e6;
+}
+
+
+.gj-picker {
+    background-color: #2b3e50;
+}
+
+.success-request {
+    display: none;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.success-acquisition {
+    display: none;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.login__links {
+    background-color: #4E5D6C;
+    padding: 2px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#modal-pin-code{
+    display: none;
+}
+/*.equipment-list {*/
+/*margin-top: 5.5rem;*/
+/*}*/

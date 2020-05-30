@@ -1,0 +1,60 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Список работников
+{% endblock %}
+{% block content %}
+    {% include 'accounting_tech/top-menu.html' %}
+    {% include 'accounting_tech/top-nav.html' %}
+    <h2 class="home-body__header">Список работников</h2>
+    <div class="container-fluid">
+        <div class="home-body__filters">
+            <h5>Фильтры</h5>
+            <form method="get" class="home-body__filters--form">
+                {{ filter.form|crispy }}
+                <input type="submit"/>
+            </form>
+        </div>
+        <div class="row table-wrap">
+            <a href="{% url 'create_employee' %}" class="button__add-new">Новая запись</a>
+            <table class="table table-bordered table-equipment">
+                <thead>
+                <tr>
+                    <th scope="col">Ф.И.О</th>
+                    <th scope="col">Должность</th>
+                    <th scope="col">Отдел</th>
+                    <th scope="col">Кабинет</th>
+                </tr>
+                </thead>
+                {% for employees in employees_list %}
+                    <tr>
+                        <th scope="row">
+                            <a class="btn button__edit" href="{% url 'edit_employee' employees.id %}">
+                                <svg class="feather feather-edit sc-dnqmqq jxshSx"
+                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </a>
+                            {{ employees.fio }}
+                        </th>
+                        <td>{{ employees.post }}</td>
+                        <td>{{ employees.dept }}</td>
+                        <td>{{ employees.room }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <script>
+        let filterName = document.querySelector('#div_id_fio').children[0];
+        let filterYear = document.querySelector('#div_id_room').children[0];
+        filterName.textContent = 'по Ф.И.О';
+        filterYear.textContent = 'по кабинету';
+        document.querySelector('.home-body__filters--form').children[2].value = 'Применить фильтры';
+    </script>
+{% endblock %}

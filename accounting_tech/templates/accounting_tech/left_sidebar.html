@@ -1,0 +1,87 @@
+<div class="col-3">
+  <div class="left-block h-100">
+    <div class="wrap h-100">
+      <div class="jumbotron p-2">
+        <h4 class="display-5">Добро пожаловать!</h4>
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1">{{ user.get_username }}</div>
+          <div class="p-2">
+            <a href="{% url 'logout' %}">Выйти</a>
+          </div>
+        </div>
+      </div>
+      <nav class="d-none d-md-block sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'home' %}">
+                <svg class="feather feather-list sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24"
+                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3" y2="6"></line>
+                  <line x1="3" y1="12" x2="3" y2="12"></line>
+                  <line x1="3" y1="18" x2="3" y2="18"></line>
+                </svg>
+                Список техники <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'employees_list' %}">
+                <svg class="feather feather-users sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24"
+                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Список работников
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'list_request_to_repair' %}">
+                <svg class="feather feather-align-center sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24"
+                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="61">
+                  <line x1="18" y1="10" x2="6" y2="10"></line>
+                  <line x1="21" y1="6" x2="3" y2="6"></line>
+                  <line x1="21" y1="14" x2="3" y2="14"></line>
+                  <line x1="18" y1="18" x2="6" y2="18"></line>
+                </svg>
+                Список заявок на ремонт
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'list_acquisition' %}">
+                <svg class="feather feather-shopping-cart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg"
+                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="1096">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Список заявок на приобретение
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'request-to-repair-list' %}">
+                <svg class="feather feather-align-center sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="24"
+                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-reactid="61">
+                  <line x1="18" y1="10" x2="6" y2="10"></line>
+                  <line x1="21" y1="6" x2="3" y2="6"></line>
+                  <line x1="21" y1="14" x2="3" y2="14"></line>
+                  <line x1="18" y1="18" x2="6" y2="18"></line>
+                </svg>
+                Список отчетов
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

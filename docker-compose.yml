@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:9.6-alpine
+    env_file:
+      - database.env
+    restart: always
+    ports:
+    - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    env_file:
+      - web.env
+    command:
+      sh -c "python manage.py makemigrations
+      && python manage.py migrate
+      && python manage.py collectstatic --no-input --clear
+      && python manage.py runscript create_superuser_script
+      && gunicorn -k egg:meinheld#gunicorn_worker -c gunicorn_conf.py asup_corp_site.wsgi:application"
+    ports:
+    - 8000:8000
+    volumes:
+      - static_volume:/app/static
+    restart: always
+    depends_on:
+      - db
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/static
+    ports:
+      - 80:80
+    restart: always
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
+  pgdata:

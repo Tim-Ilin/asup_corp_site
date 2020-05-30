@@ -1,0 +1,95 @@
+body {
+    background-color: #593790;
+}
+
+.login-reg h2 {
+    color: white;
+    font-family: Roboto, serif;
+    font-size: 30px;
+}
+
+.login-reg {
+    color: white;
+    font-family: Roboto, serif;
+}
+
+.login-reg svg {
+    left: 60%;
+    height: 70%;
+    position: fixed;
+    top: 16%;
+}
+
+.login__other--form {
+    margin-bottom: 30px;
+}
+
+.login__other--href {
+    color: white;
+    text-decoration: none;
+    padding: 4px 20%;
+    border: 1px solid #BA8FFF;
+    font-size: 100%;
+}
+
+.login__other--href:hover {
+    text-decoration: none;
+    color: #BA8FFF;
+    border: 1px solid white;
+}
+
+.login__other--submit {
+    background-color: #BA8FFF;
+    padding: 0;
+    margin: 0;
+    width: 49%;
+}
+#modal-pin-code {
+    display: none;
+}
+
+@media (max-width: 1210px) {
+    .login-reg svg {
+        left: 53%;
+    }
+
+    .login__other--href {
+        font-size: 90%;
+        color: white;
+        text-decoration: none;
+        padding: 4px 20%;
+        border: 1px solid #BA8FFF;
+    }
+
+    .login__other--submit {
+        width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-fixed {
+        display: none;
+    }
+
+    .login__other--submit {
+        width: 45%;
+    }
+
+    .login__other--href {
+        font-size: 89%;
+        color: white;
+        text-decoration: none;
+        padding: 4px 20%;
+        border: 1px solid #BA8FFF;
+    }
+}
+
+@media (max-width: 365px) {
+    .login__other--href {
+        font-size: 70%;
+        color: white;
+        text-decoration: none;
+        padding: 4px 20%;
+        border: 1px solid #BA8FFF;
+    }
+}

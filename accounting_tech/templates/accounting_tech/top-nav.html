@@ -1,0 +1,22 @@
+{% load static %}
+{% block content %}
+  <div class="top-nav">
+    <ul>
+      <li class="top-nav__item">
+        <a href="{% url 'home' %}" class="top-nav__link{% if request.resolver_match.url_name == "home" %}--active{% endif %}">Список техники</a>
+      </li>
+      <li class="top-nav__item">
+        <a href="{% url 'employees_list' %}" class="top-nav__link{% if request.resolver_match.url_name == "employees_list" %}--active{% endif %}">Список работников</a>
+      </li>
+      <li class="top-nav__item">
+        <a href="{% url 'list_request_to_repair' %}" class="top-nav__link{% if request.resolver_match.url_name == "list_request_to_repair" %}--active{% endif %}">Список заявок на ремонт</a>
+      </li>
+      <li class="top-nav__item">
+        <a href="{% url 'list_acquisition' %}" class="top-nav__link{% if request.resolver_match.url_name == "list_acquisition" %}--active{% endif %}">Заявки на приобретение</a>
+      </li>
+      <li class="top-nav__item">
+        <a href="{% url 'request-to-repair-list' %}" class="top-nav__link{% if request.resolver_match.url_name == "request-to-repair-list" %}--active{% endif %}">Список отчетов</a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

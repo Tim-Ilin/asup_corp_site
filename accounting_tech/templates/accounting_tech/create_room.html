@@ -1,0 +1,23 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% block title %}
+  Ввод нового кабинета
+{% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="entry-wrap">
+    <div class="container">
+      <div class="row justify-content-center flex-column vh-100">
+        <div class="align-self-center col-lg-6 col-10">
+          <h2 class="entry-wrap__title">Ввод нового кабинета</h2>
+          <form class="position" action="" method="post">{% csrf_token %}
+            {{ form|crispy }}
+            <input class="entry-wrap__submit" type="submit" value="Применить изменения"/>
+            <input onclick="window.location=document.referrer;" class="entry-wrap__comeback" type="button" value="Вернуться"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static  'formsRoomPostDepRoom.js' %}"></script>
+{% endblock %}

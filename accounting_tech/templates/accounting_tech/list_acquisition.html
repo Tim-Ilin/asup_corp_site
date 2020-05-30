@@ -1,0 +1,30 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% block title %}
+    Список заявок на приобретение
+{% endblock %}
+{% block content %}
+  {% include 'accounting_tech/top-menu.html' %}
+  {% include 'accounting_tech/top-nav.html' %}
+  <h2 class="home-body__header">Список заявок на приобретение</h2>
+  <div class="container-fluid">
+    <div class="row table-wrap">
+      <table class="table table-bordered table-equipment">
+        <thead>
+        <tr>
+          <th scope="col" class="text-center">Заявитель</th>
+          <th scope="col" class="text-center">Описание заявки</th>
+        </tr>
+        </thead>
+        {% for acquisition in acquisition_list %}
+          <tr>
+            <th scope="row" class="text-center">
+              {{ acquisition.complainant.fio }}
+            </th>
+            <td class="text-center">{{ acquisition.description_acquisition }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Изменить данные
+{% endblock %}
+{% block content %}
+  {% include 'accounting_tech/top-menu.html' %}
+  {% include 'accounting_tech/top-nav.html' %}
+  <h2 class="home-body__header">Изменение данных</h2>
+  <div class="container">
+    <div class="row">
+      <form class="form-edit__entry" action="" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <input class="form-edit__submit" type="submit" value="Применить изменения"/>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'addButtonCreatePostDepRoom.js' %}"></script>
+{% endblock %}

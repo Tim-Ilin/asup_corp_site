@@ -1,0 +1,50 @@
+{% extends 'accounting_tech/base-new.html' %}
+{% block title %}
+    Список заявок на ремонт
+{% endblock %}
+{% block content %}
+    {% include 'accounting_tech/top-menu.html' %}
+    {% include 'accounting_tech/top-nav.html' %}
+    <h2 class="home-body__header">Список заявок на ремонт</h2>
+    <div class="container-fluid">
+        <div class="row table-wrap">
+            <table class="table table-bordered table-equipment">
+                <thead>
+                <tr>
+                    <th scope="col">Заявитель</th>
+                    <th scope="col">ИНВ №</th>
+                    <th scope="col">Тел.</th>
+                    <th scope="col">Местоположение техники</th>
+                </tr>
+                </thead>
+                {% for req in requesttorepair_list %}
+                    <tr>
+                        <th scope="row">
+                            <a class="btn button__edit" href="{% url 'detail_request-repair' req.id %}">
+                                <svg class="feather feather-eye sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg"
+                                     width="24"
+                                     height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                                     data-reactid="516">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </a>
+                            {{ req.complainant.fio }}
+                        </th>
+                        <td>{{ req.inventory_number }}</td>
+                        <td>{{ req.phone }}</td>
+                        <td>{{ req.location }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        const markRead = '/inbox/notifications/mark-all-as-read/';
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', markRead);
+        xhr.send();
+    </script>
+{% endblock %}
