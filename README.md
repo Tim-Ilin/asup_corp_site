@@ -10,7 +10,7 @@ ___
 # Below you can see how is look like my project.
 #### Страница логина
 ![Login Page](README/Login%20full.png)
-#### Таже страница, но под разрешение для iPhone (Айфона у меня нет, но есть инструменты разработчика в браузере)
+#### Та же страница, но под разрешение для iPhone (Айфона у меня нет, но есть инструменты разработчика в браузере)
 ![Login page mobile ](README/Login_iPhone.png)
 #### Небольшая Gif анимация, которая покажет как примерно все это выглядит.
 ![How it works ](README/example.gif)
